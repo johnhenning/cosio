@@ -47,7 +47,7 @@ First build the docker image:
 
 ### Run
 
-Run the following to start downloading the file(s):
+Run the following to start downloading/uploading the file(s):
 
 > `./run.sh <task> <local_directory_or_file> <bucket_name> <remote_directory_or_file> <credentials> <image_name>`
 
