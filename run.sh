@@ -21,10 +21,13 @@ function normalize_path()
     echo ${path}
 }
 
-local=$(normalize_path $(to_absolute $1))
-bucket=$2
-remote=$3
-creds=$(normalize_path $(to_absolute $4))
-image=$5
+task=$1
+local=$(normalize_path $(to_absolute $2))
+bucket=$3
+remote=$4
+creds=$(normalize_path $(to_absolute $5))
+image=$6
 
-docker run --mount type=bind,source="$creds",target="/creds/creds.json" -v ${local}:${local} -it ${image} ${local} ${bucket} ${remote} /creds/creds.json
+docker run --mount type=bind,source="$creds",target="/creds/creds.json" \
+--mount type=bind,source="${local}",target="${local}" -it ${image} ${task} \
+${local} ${bucket} ${remote} /creds/creds.json
