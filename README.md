@@ -1,6 +1,6 @@
-# Object Store Directory Dowloader
+# IBM Object Store Dowloader
 
-Simple object downloader written in
+Simple IBM object store downloader written in Python
 
 ## Local
 
@@ -16,17 +16,19 @@ There's an issue with `cos_aspera` on Mac so please use docker if you're on a Ma
 
 ### Run
 
-Run the following to start running folder:
+Run the following to start downloading the file(s):
 
-> `python download_object_store_directory.py <local_directory> <bucket_name> <remote_directory> <credentials>`
+> `python object_store_downloader.py <local_directory> <bucket_name> <remote_directory_or_file> <credentials>`
 
-#### Example
+#### Examples
 
-> `python download_object_store_directory.py detections diva-phase-2 dets/ibm creds.json`
+This is an example
 
-- `detections` will be a folder in the same directory you're running from.
+> `python object_store_downloader.py detections diva-phase-2 dets/ibm creds.json`
+
+- `detections` will be a folder in the same directory you're running from. This can be any folder path though.
 - `diva-phase-2` is the bucket name
-- `dets/ibm` is the prefix folders on the object store
+- `dets/ibm` is the folder or file to download from the object store
 - `creds.json` is a provided credentials file.
 
 ## Docker
@@ -41,8 +43,8 @@ First build the docker image:
 
 ### Run
 
-Run the following to start downloading the files:
+Run the following to start downloading the file(s):
 
-> `./download_directory.sh <local_directory> <bucket_name> <remote_directory> <credentials>`
+> `./download_directory.sh <local_directory> <bucket_name> <remote_directory_or_file> <credentials>`
 
-- These will be the same arguments passed directly to the script.
+- These will be the same arguments that were passed directly to the script in the local setup instructions.
