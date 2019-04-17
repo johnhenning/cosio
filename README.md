@@ -18,13 +18,13 @@ There's an issue with `cos_aspera` on Mac so please use docker if you're on a Ma
 
 Run the following to start downloading the file(s):
 
-> `python object_store_downloader.py <local_directory> <bucket_name> <remote_directory_or_file> <credentials>`
+> `python main.py <local_directory> <bucket_name> <remote_directory_or_file> <credentials>`
 
 #### Examples
 
 This is an example
 
-> `python object_store_downloader.py detections diva-phase-2 dets/ibm creds.json`
+> `python main.py detections diva-phase-2 dets/ibm creds.json`
 
 - `detections` will be a folder in the same directory you're running from. This can be any folder path though.
 - `diva-phase-2` is the bucket name
