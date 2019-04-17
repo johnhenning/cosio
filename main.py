@@ -1,5 +1,4 @@
 import argparse
-import os.path
 
 import cosio
 
@@ -21,8 +20,8 @@ def main():
     args = parse_args()
     credentials = cosio.helper.load_credentials(args.credentials)
     print('Connecting to IBM Object Storage')
-    transfer_manager = cosio.create_transfer_manager(credentials)
-    cosio.download(args.local, args.bucket, args.remote, transfer_manager)
+    transfer_manager = cosio.client.create_transfer_manager(credentials)
+    cosio.download.download_from_object_store(args.local, args.bucket, args.remote, transfer_manager)
 
 
 if __name__ == "__main__":

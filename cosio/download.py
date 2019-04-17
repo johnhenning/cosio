@@ -3,7 +3,7 @@ import os
 from .helper import is_file
 
 
-def download(local, bucket_name, remote, transfer_manager):
+def download_from_object_store(local, bucket_name, remote, transfer_manager):
     if not os.path.exists(local):
         os.makedirs(local, exist_ok=True)
     if is_file(remote):

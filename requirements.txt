@@ -1,2 +1,2 @@
-ibm_cos_sdk
-cos_aspera
+ibm-cos-sdk
+cos-aspera
