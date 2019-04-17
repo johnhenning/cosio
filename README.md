@@ -1,6 +1,6 @@
-# IBM Object Store Dowloader
+# COSIO - Simple IBM Cloud Object Store Interface
 
-Simple IBM object store downloader written in Python
+Simple IBM cloud object store interface written in Python
 
 ## Local
 
