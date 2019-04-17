@@ -27,7 +27,4 @@ remote=$3
 creds=$(normalize_path $(to_absolute $4))
 image=$5
 
-echo ${local}
-echo ${creds}
-
 docker run --mount type=bind,source="$creds",target="/creds/creds.json" -v ${local}:${local} -it ${image} ${local} ${bucket} ${remote} /creds/creds.json
