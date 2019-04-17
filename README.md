@@ -39,12 +39,13 @@ This is an example
 
 First build the docker image:
 
-> `docker build -t downloader .`
+> `docker build -t <image_name> .`
 
 ### Run
 
 Run the following to start downloading the file(s):
 
-> `./download_directory.sh <local_directory> <bucket_name> <remote_directory_or_file> <credentials>`
+> `./download_directory.sh <local_directory> <bucket_name> <remote_directory_or_file> <credentials> <image_name>`
 
 - These will be the same arguments that were passed directly to the script in the local setup instructions.
+- `<image_name>` is the same image name you gave to your built docker container
