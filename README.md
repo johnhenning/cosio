@@ -22,7 +22,7 @@ Run the following to start downloading the file(s):
 
 Run the following to start uploading file(s):
 
-> `python main.py download <local_directory_or_file> <bucket_name> <remote_directory> <credentials>`
+> `python main.py upload <local_directory_or_file> <bucket_name> <remote_directory> <credentials>`
 
 #### Examples
 
