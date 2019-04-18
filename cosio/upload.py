@@ -1,11 +1,13 @@
 import os
 
-from .helper import is_file
+from .helper import is_file, to_absolute_path
 
 
 def upload_to_object_store(local, bucket_name, remote, transfer_manager):
+    local = to_absolute_path(local)
     if not os.path.exists(local):
-        os.makedirs(local, exist_ok=True)
+        print('Path does not exist')
+        return
 
     try:
         if is_file(local):
@@ -15,8 +17,7 @@ def upload_to_object_store(local, bucket_name, remote, transfer_manager):
         else:
             upload_directory(local, bucket_name, remote, transfer_manager)
     except Exception as e:
-        print(e.args)
-        # print(e)
+        print(e)
 
 
 def upload_file(local_file, bucket_name, remote_file, transfer_manager):

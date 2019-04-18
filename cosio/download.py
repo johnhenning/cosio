@@ -4,14 +4,18 @@ from .helper import is_file
 
 
 def download_from_object_store(local, bucket_name, remote, transfer_manager):
+    local = os.path.abspath(local)
     if not os.path.exists(local):
         os.makedirs(local, exist_ok=True)
-    if is_file(remote):
-        remote_filename = os.path.basename(remote)
-        local = os.path.join(local, remote_filename)
-        download_file(local, bucket_name, remote, transfer_manager)
-    else:
-        download_directory(local, bucket_name, remote, transfer_manager)
+    try:
+        if is_file(remote):
+            remote_filename = os.path.basename(remote)
+            local = os.path.join(local, remote_filename)
+            download_file(local, bucket_name, remote, transfer_manager)
+        else:
+            download_directory(local, bucket_name, remote, transfer_manager)
+    except Exception as e:
+        print(e)
 
 
 def download_file(local_file, bucket_name, remote_file, transfer_manager):

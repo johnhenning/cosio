@@ -21,3 +21,7 @@ def get_files_from_directory(directory):
 def merge_local_and_remote_paths(local_files, local_directory, remote_directory):
     return [os.path.join(remote_directory, os.path.relpath(local_file, local_directory))
             for local_file in local_files]
+
+
+def to_absolute_path(path):
+    return os.path.abspath(path)
